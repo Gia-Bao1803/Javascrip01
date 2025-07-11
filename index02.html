@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Gia Bảo</title>
+    <style>
+        body {
+            background-color: rgb(253, 210, 235);
+        }
+        input {
+            border-radius: 10px;
+            border-style: double;
+            border-color: black;
+        }
+        button {
+            background-color: burlywood;
+            border-style: double;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phép cộng JavaScript</h1>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <input type="text" id="Số 1" placeholder="Số 1" style="width: 80px;">
+        <input type="text" id="Số 2" placeholder="Số 2" style="width: 80px;">
+        <p id="in"></p>
+        <button onclick="myfunction()">Kết quả</button>
+    </div>
+
+    <script>
+        function myfunction() {
+            // Lấy giá trị từ hai ô nhập liệu
+            let value1 = document.getElementById("Số 1").value.trim();
+            let value2 = document.getElementById("Số 2").value.trim();
+
+            // Kiểm tra nếu một trong hai ô bị bỏ trống
+            if (value1 === "" || value2 === "") {
+                document.getElementById("in").innerHTML = "Vui lòng nhập số vào cả hai ô.";
+                return;
+            }
+
+            // Chuyển giá trị nhập vào thành số
+            let a = parseFloat(value1);
+            let b = parseFloat(value2);
+
+            // Kiểm tra xem giá trị có phải là số hay không
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("in").innerHTML = "Vui lòng chỉ nhập số.";
+                return;
+            }
+
+            // Tính tổng và hiển thị kết quả
+            let tong = a + b;
+            document.getElementById("in").innerHTML = "Tổng: " + tong;
+        }
+    </script>
+</body>
+</html>
